@@ -116,8 +116,7 @@ bool Main::mainLoop()
 	///*
 	//	add a loading DLL libray
 	//*/
-	//typedef WorldInterface* (__cdecl *Levelfn)();
-	
+
 	//Declare an HINSTANCE and load the library dynamically. Don’t forget 
 	//to specify a correct path to the location of LoadMe.dll
 

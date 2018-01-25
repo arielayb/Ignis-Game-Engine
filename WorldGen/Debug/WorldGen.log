@@ -1,0 +1,13 @@
+﻿Build started 1/25/2018 12:22:35 AM.
+     1>Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\WorldGen\WorldGen.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.dll" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug" /LIBPATH:"C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib" /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" IronAgeTales.lib LvlMgr.lib pthreadVC2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.lib" /MACHINE:X86 /DLL Debug\WorldGen.obj
+            Creating library C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.lib and object C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.exp
+     1>WorldGen.obj : error LNK2001: unresolved external symbol "public: virtual bool __thiscall WorldGen::loadTiles(struct SDL_Texture *,struct SDL_Renderer *,class std::array<struct SDL_Rect,87> &)" (?loadTiles@WorldGen@@UAE_NPAUSDL_Texture@@PAUSDL_Renderer@@AAV?$array@USDL_Rect@@$0FH@@std@@@Z)
+     1>WorldGen.obj : error LNK2001: unresolved external symbol "public: virtual bool __thiscall WorldGen::loadItems(struct SDL_Texture *,struct SDL_Texture *,struct SDL_Renderer *,class std::array<struct SDL_Rect,87> &)" (?loadItems@WorldGen@@UAE_NPAUSDL_Texture@@0PAUSDL_Renderer@@AAV?$array@USDL_Rect@@$0FH@@std@@@Z)
+     1>C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.dll : fatal error LNK1120: 2 unresolved externals
+     1>Done Building Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\WorldGen\WorldGen.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.36

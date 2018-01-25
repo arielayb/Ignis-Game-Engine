@@ -81,7 +81,6 @@
   <ItemGroup>
     <ClInclude Include="include\Levels.h" />
     <ClInclude Include="include\WorldInterface.h" />
-    <ClInclude Include="WorldGen.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Levels.cpp" />

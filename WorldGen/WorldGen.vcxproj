@@ -39,7 +39,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\WorldGen\include;C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\WorldGen\include;C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\include;C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\LvlMgr\include;$(IncludePath)</IncludePath>
     <SourcePath>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\WorldGen\src;$(SourcePath)</SourcePath>
     <LibraryPath>C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib;C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -54,7 +54,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Ignis_1.3V.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>IronAgeTales.lib;LvlMgr.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug;C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
@@ -80,11 +80,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\WorldGen.h" />
-    <ClInclude Include="include\WorldInterface.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\WorldInterface.cpp" />
-    <ClCompile Include="WorldGen.cpp" />
+    <ClCompile Include="src\WorldGen.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
