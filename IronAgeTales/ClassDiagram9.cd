@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ImageLoader" Collapsed="true">
+    <Position X="12.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAABAAAAAAwCAAAAAAAAAcIAQAAAAACAAAAA=</HashCode>
+      <FileName>include\ImageLoader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ImageManager" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAABAAAAAAIAAAAAAIAAAAAQAEAAAAADCAAAAA=</HashCode>
+      <FileName>include\ImageManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemManager" Collapsed="true">
+    <Position X="15" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAUQAAAAAAIAAQAQAAAABgAACAAAAAAAACAAAA=</HashCode>
+      <FileName>include\ItemManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Levels" Collapsed="true">
+    <Position X="8.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAosCCAEADhAAAAlAnAFUACQBNAABQAcGAAAAEUY=</HashCode>
+      <FileName>include\Levels.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Main" Collapsed="true">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Main::tiles" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>include\Main.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Main::msgtile" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>include\Main.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Main::txtMsg" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>include\Main.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAIABAAAiBBAQEhEAAAACgIFICAQAYIAMIBBgCACEA=</HashCode>
+      <FileName>include\Main.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>include\Menu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestLevel" Collapsed="true">
+    <Position X="10.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAEAAAAAAAAAAAAAgAAEAAAAAAgAAAEEAAAAAAA=</HashCode>
+      <FileName>include\TestLevel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Timer" Collapsed="true">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAEAAAAAAAAAgAEgAAAACBAAAAAAQAEEQEIAA=</HashCode>
+      <FileName>include\Timer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorldInterface" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAhAEAAgEACAAAQAAg0AFGAAgIAIyBIAVlwQAEAEI=</HashCode>
+      <FileName>include\WorldInterface.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
