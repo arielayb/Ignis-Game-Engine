@@ -2,7 +2,6 @@
 #define WORLD_GEN_H
 
 #include "WorldInterface.h"
-#include "ItemManager.h"
 
 #if defined(__APPLE__)
 #include <OpenGL/gl3.h>
@@ -22,6 +21,10 @@
 class DLLAPI WorldGen : public WorldInterface
 {
 	private:
+		//set the indexes of the map
+		float indexX = 0.0f;
+		float indexY = 0.0f;
+
 
 	public:
 		WorldGen();
@@ -49,7 +52,7 @@ class DLLAPI WorldGen : public WorldInterface
 
 };
 
-extern "C" DLLAPI WorldInterface* __cdecl createLevel()
+extern "C" DLLAPI WorldInterface* __cdecl createWorld()
 {
 
 	//return the created function

@@ -1,18 +1,34 @@
-﻿Build started 1/25/2018 12:08:12 AM.
-     1>Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\IronAgeTales\IronAgeTales.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\IronAgeTales.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\lib" /LIBPATH:"C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib\x86" /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" SDL2.lib SDL2main.lib SDL2_image.lib SDL2_mixer.lib SDL2_ttf.lib opengl32.lib Box2D_debug.lib glew32.lib glew32s.lib glfw.lib LvlMgr.lib pthreadVC2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\IronAgeTales.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\IronAgeTales.lib" /MACHINE:X86 Debug\ImageLoader.obj
+﻿Build started 1/28/2018 1:11:14 PM.
+     1>Project "C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\IronAgeTales\IronAgeTales.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\LvlMgr\include" /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /D MAKEDLL /D DEF /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\ImageLoader.cpp src\ImageManager.cpp src\ItemManager.cpp src\Main.cpp src\Menu.cpp src\MsgManager.cpp src\Timer.cpp
+         Timer.cpp
+         MsgManager.cpp
+         Menu.cpp
+         Main.cpp
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\ironagetales\src\main.cpp(295): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\ironagetales\src\main.cpp(300): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\ironagetales\src\main.cpp(352): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         ItemManager.cpp
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\ironagetales\src\itemmanager.cpp(53): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         ImageManager.cpp
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\ironagetales\src\imagemanager.cpp(95): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\ironagetales\src\imagemanager.cpp(96): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+         ImageLoader.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\IronAgeTales.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\lib" /LIBPATH:"C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib\x86" /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" SDL2.lib SDL2main.lib SDL2_image.lib SDL2_mixer.lib SDL2_ttf.lib opengl32.lib Box2D_debug.lib glew32.lib glew32s.lib glfw.lib LvlMgr.lib pthreadVC2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\IronAgeTales.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\IronAgeTales.lib" /MACHINE:X86 Debug\ImageLoader.obj
          Debug\ImageManager.obj
          Debug\ItemManager.obj
          Debug\Main.obj
          Debug\Menu.obj
          Debug\MsgManager.obj
          Debug\Timer.obj
-         "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\LvlMgr.lib"
+         "C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\LvlMgr.lib"
      1>Main.obj : error LNK2019: unresolved external symbol "public: void __thiscall WorldInterface::playerInput(union SDL_Event)" (?playerInput@WorldInterface@@QAEXTSDL_Event@@@Z) referenced in function "public: bool __thiscall Main::mainLoop(void)" (?mainLoop@Main@@QAE_NXZ)
-     1>C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\IronAgeTales.exe : fatal error LNK1120: 1 unresolved externals
-     1>Done Building Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\IronAgeTales\IronAgeTales.vcxproj" (Build target(s)) -- FAILED.
+     1>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\IronAgeTales.exe : fatal error LNK1120: 1 unresolved externals
+     1>Done Building Project "C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\IronAgeTales\IronAgeTales.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:00.46
+Time Elapsed 00:00:04.50
