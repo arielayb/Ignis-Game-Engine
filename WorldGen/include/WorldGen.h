@@ -1,7 +1,11 @@
 #ifndef WORLD_GEN_H
 #define WORLD_GEN_H
 
+#include <vector>
 #include "WorldInterface.h"
+#include <stdlib.h>
+#include "ItemManager.h"
+#include <Windows.h>
 
 #if defined(__APPLE__)
 #include <OpenGL/gl3.h>
@@ -22,8 +26,8 @@ class DLLAPI WorldGen : public WorldInterface
 {
 	private:
 		//set the indexes of the map
-		float indexX = 0.0f;
-		float indexY = 0.0f;
+		int indexX = 0;
+		int indexY = 0;
 
 
 	public:
@@ -34,15 +38,16 @@ class DLLAPI WorldGen : public WorldInterface
 		int width;
 		int height;
 
+		//Classical Perlin noise -- on hold
 		// Function to linearly interpolate between a0 and a1
 		// Weight w should be in the range [0.0, 1.0]
-		float lerp(float a0, float a1, float weight);
+		//float lerp(float a0, float a1, float weight);
 
-		// Computes the dot product of the distance and gradient vectors.
-		float dotGridGradient(float ix, float iy, float x, float y);
+		//// Computes the dot product of the distance and gradient vectors.
+		//float dotGridGradient(float ix, float iy, float x, float y);
 
-		// Compute Perlin noise at coordinates x, y
-		float perlin(float x, float y);
+		//// Compute Perlin noise at coordinates x, y
+		//float perlin(float x, float y);
 
 		//load all the sprites for the world.
 		bool loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet);

@@ -120,13 +120,16 @@ bool Main::mainLoop()
 	//Declare an HINSTANCE and load the library dynamically. Don’t forget 
 	//to specify a correct path to the location of LoadMe.dll
 
-	HINSTANCE LoadDLL = LoadLibrary("lib/LvlMgr.dll");
+	HINSTANCE LoadDLL		  = LoadLibrary("lib/LvlMgr.dll");
+	
+	HINSTANCE LoadWorldGenDLL = LoadLibrary("lib/WorldGen.dll");
 
 	// Check to see if the library was loaded successfully 
-	if (!LoadDLL)
+	if (!LoadDLL || !LoadWorldGenDLL)
 	{
-		printf("LoadDLL library failed to load!\n");
+		printf("DLL library failed to load!\n");
 		FreeLibrary(LoadDLL);
+		FreeLibrary(LoadWorldGenDLL);
 		return 1;
 
 	}
@@ -134,22 +137,29 @@ bool Main::mainLoop()
 	/*
 	 *	add a loading DLL libray
 	 */
-	typedef WorldInterface* (__cdecl *Levelfn)();
+	//typedef WorldInterface* (__cdecl *Levelfn)();
+	typedef WorldInterface* (__cdecl *Worldfn)();
 
 
 	//declare a variable of type pointer to EntryPoint function, a name of 
 	// which you will later use instead of EntryPoint
-	Levelfn CreateModule = Levelfn(GetProcAddress(LoadDLL, (LPCSTR)"createLevel"));
+	//Levelfn CreateModule = Levelfn(GetProcAddress(LoadDLL, (LPCSTR)"createLevel"));
+	Worldfn CreateWorldModule = Worldfn(GetProcAddress(LoadWorldGenDLL, (LPCSTR)"createWorld"));
 
-	if (!CreateModule) {
-		std::cerr << "Unable to load Create_Level from DLL!\n";
+	/*if (!CreateModule || !CreateWorldModule) {
+		std::cerr << "Unable to load module from DLL!\n";
 		std::cout << GetLastError() << std::endl;
 		FreeLibrary(LoadDLL);
+		FreeLibrary(LoadWorldGenDLL);
+		return 1;
+	}*/
+
+	if (!CreateWorldModule) {
+		std::cerr << "Unable to load module from DLL!\n";
+		std::cout << GetLastError() << std::endl;
+		FreeLibrary(LoadWorldGenDLL);
 		return 1;
 	}
-
-
-	//Levels * funcLevel = (*CreateModule)();
 
 	//  to count the frame rate
 	Timer fps;
@@ -159,12 +169,10 @@ bool Main::mainLoop()
 
 	//  the stream for the timer
 	std::stringstream fpsFont;
-	//std::string fpsFont;
 
 	//  set the level variable for polymorphic process
-	//WorldInterface * world = new Levels();
-	
-	WorldInterface * world = (*CreateModule)();
+	//WorldInterface * world = (*CreateModule)();
+	WorldInterface * world = (*CreateWorldModule)();
 
 	//  ceate player handler event
 	SDL_Event events;

@@ -1,29 +1,23 @@
-﻿Build started 1/28/2018 3:44:49 PM.
+﻿Build started 1/30/2018 11:05:11 PM.
      1>Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\WorldGen\WorldGen.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\IronAgeTales\include" /I"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\WorldGen\include" /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D MAKEDLL /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\WorldGen.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\WorldGen\include" /I"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\IronAgeTales\include" /I"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\FastNoise" /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D MAKEDLL /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\WorldGen.cpp
          WorldGen.cpp
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\include\worldgen.h(22): warning C4275: non dll-interface class 'WorldInterface' used as base for dll-interface class 'WorldGen'
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\include\worldgen.h(26): warning C4275: non dll-interface class 'WorldInterface' used as base for dll-interface class 'WorldGen'
                  c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\include\worldinterface.h(16) : see declaration of 'WorldInterface'
-                 c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\include\worldgen.h(21) : see declaration of 'WorldGen'
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(21): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(38): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(46): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(48): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(59): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(60): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(62): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(63): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+                 c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\include\worldgen.h(25) : see declaration of 'WorldGen'
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(104): warning C4244: 'argument' : conversion from 'int' to 'FN_DECIMAL', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(105): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(110): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.dll" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug" /LIBPATH:"C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib" /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" IronAgeTales.lib LvlMgr.lib pthreadVC2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.lib" /MACHINE:X86 /DLL Debug\WorldGen.obj
             Creating library C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.lib and object C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.exp
-     1>IronAgeTales.lib(ImageLoader.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'IronAgeTales.lib(ImageLoader.obj)' or at 'C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\vc120.pdb'; linking object as if no debug info
-     1>IronAgeTales.lib(ImageManager.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'IronAgeTales.lib(ImageManager.obj)' or at 'C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\vc120.pdb'; linking object as if no debug info
-     1>IronAgeTales.lib(Main.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'IronAgeTales.lib(Main.obj)' or at 'C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\vc120.pdb'; linking object as if no debug info
-     1>IronAgeTales.lib(Timer.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'IronAgeTales.lib(Timer.obj)' or at 'C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\vc120.pdb'; linking object as if no debug info
-         WorldGen.vcxproj -> C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.dll
-     1>Done Building Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\WorldGen\WorldGen.vcxproj" (Build target(s)).
+     1>WorldGen.obj : error LNK2019: unresolved external symbol "public: void __thiscall FastNoise::SetSeed(int)" (?SetSeed@FastNoise@@QAEXH@Z) referenced in function "public: __thiscall FastNoise::FastNoise(int)" (??0FastNoise@@QAE@H@Z)
+     1>WorldGen.obj : error LNK2019: unresolved external symbol "public: float __thiscall FastNoise::GetNoise(float,float)const " (?GetNoise@FastNoise@@QBEMMM@Z) referenced in function "public: virtual bool __thiscall WorldGen::loadTiles(struct SDL_Texture *,struct SDL_Renderer *,class std::array<struct SDL_Rect,87> &)" (?loadTiles@WorldGen@@UAE_NPAUSDL_Texture@@PAUSDL_Renderer@@AAV?$array@USDL_Rect@@$0FH@@std@@@Z)
+     1>WorldGen.obj : error LNK2019: unresolved external symbol "private: void __thiscall FastNoise::CalculateFractalBounding(void)" (?CalculateFractalBounding@FastNoise@@AAEXXZ) referenced in function "public: __thiscall FastNoise::FastNoise(int)" (??0FastNoise@@QAE@H@Z)
+     1>C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.dll : fatal error LNK1120: 3 unresolved externals
+     1>Done Building Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\WorldGen\WorldGen.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.21
+Time Elapsed 00:00:01.43
