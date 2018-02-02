@@ -21,6 +21,9 @@ class WorldInterface : public Main
 		int tileHeight_;
 		int tileWidth_;
 
+		//generate the world map
+		bool generate;
+
 		//set the level parameters
 		int levelWidth_;
 		int levelHeight_;
@@ -66,6 +69,7 @@ class WorldInterface : public Main
 		float yPos;
 
 		friend class Levels;
+		friend class WorldGen;
 		friend class MsgManager;
 
 	public:	

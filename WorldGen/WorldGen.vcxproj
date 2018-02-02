@@ -54,10 +54,11 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>IronAgeTales.lib;LvlMgr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>IronAgeTales.lib;LvlMgr.lib;FastNoise.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug;C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
+      <SubSystem>Windows</SubSystem>
     </Link>
     <Lib>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>

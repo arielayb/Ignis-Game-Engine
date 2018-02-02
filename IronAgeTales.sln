@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LvlMgr", "LvlMgr\LvlMgr.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WorldGen", "WorldGen\WorldGen.vcxproj", "{AD4B7637-7C3D-4918-BE7D-D80B4BE85D62}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FastNoise", "FastNoise\FastNoise.vcxproj", "{04B1B7BA-FB97-4850-9487-66F21C69D9CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +29,10 @@ Global
 		{AD4B7637-7C3D-4918-BE7D-D80B4BE85D62}.Debug|Win32.Build.0 = Debug|Win32
 		{AD4B7637-7C3D-4918-BE7D-D80B4BE85D62}.Release|Win32.ActiveCfg = Release|Win32
 		{AD4B7637-7C3D-4918-BE7D-D80B4BE85D62}.Release|Win32.Build.0 = Release|Win32
+		{04B1B7BA-FB97-4850-9487-66F21C69D9CA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{04B1B7BA-FB97-4850-9487-66F21C69D9CA}.Debug|Win32.Build.0 = Debug|Win32
+		{04B1B7BA-FB97-4850-9487-66F21C69D9CA}.Release|Win32.ActiveCfg = Release|Win32
+		{04B1B7BA-FB97-4850-9487-66F21C69D9CA}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

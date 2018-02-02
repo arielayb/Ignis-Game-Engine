@@ -69,69 +69,69 @@ class Main
 		//the enum will have a list of sprites and tiles.
 		enum tiles
 		{
-			herodown1, 
-			herodown2, 
-			herodown3, 
-			herodown4, 
+			herodown1,
+			herodown2,
+			herodown3,
+			herodown4,
 			herodown5,
-			heroup1, 
-			heroup2, 
-			heroup3, 
-			heroup4, 
-			heroup5, 
+			heroup1,
+			heroup2,
+			heroup3,
+			heroup4,
+			heroup5,
 			heroright1,
-			heroright2, 
-			heroright3, 
-			heroright4, 
+			heroright2,
+			heroright3,
+			heroright4,
 			heroright5,
-			heroleft1, 
-			heroleft2, 
-			heroleft3, 
-			heroleft4, 
+			heroleft1,
+			heroleft2,
+			heroleft3,
+			heroleft4,
 			heroleft5,
-			darkGrass, 
-			grassDirtHorizontal, 
+			darkGrass,
+			grassDirtHorizontal,
 			grassDirtVertical,
 			grassDirtTopLeft,
 			grassDirtTopRight,
-			grassDirtBottomLeft, 
-			grassDirtBottomRight, 
-			grassDirtHoriVerRight, 
+			grassDirtBottomLeft,
+			grassDirtBottomRight,
+			grassDirtHoriVerRight,
 			grassDirtHoriVerLeft,
 			grassDirtVerHoriUp,
 			grassDirtVerHoriDown,
-			grassDirtFourPaths, 
-			dirt, 
-			woodDoor, 
+			grassDirtFourPaths,
+			dirt,
+			woodDoor,
 			event,
 			transport,
 			previous,
-			wallfront, 
-			wallvertical, 
+			wallfront,
+			wallvertical,
 			wallfrontendless,
-			wallhorizontal, 
-			wallLeftCorner, 
+			wallhorizontal,
+			wallLeftCorner,
 			wallRightCorner,
-			wallBottomLeftCorner, 
-			wallBottomRightCorner, 
+			wallBottomLeftCorner,
+			wallBottomRightCorner,
 			wallTop,
 			treeWallTopEndless,
-			treeWallTopEnd, 
-			treeWallBottom, 
-			treeWallVertical, 
-			treeWallCornerTopLeft, 
-			treeWallCornerTopRight, 
-			treeWallCornerBottomLeft, 
-			treeWallCornerBottomRight, 
+			treeWallTopEnd,
+			treeWallBottom,
+			treeWallVertical,
+			treeWallCornerTopLeft,
+			treeWallCornerTopRight,
+			treeWallCornerBottomLeft,
+			treeWallCornerBottomRight,
 			treeWallMiddle,
-			water, 
-			arrow, 
-			grave, 
-			tombstone,  
+			water,
+			arrow,
+			grave,
+			tombstone,
 			cross,
-			coinAnim1, 
-			coinAnim2, 
-			coinAnim3, 
+			coinAnim1,
+			coinAnim2,
+			coinAnim3,
 			coinAnim4,
 			treeShortTopLeft,
 			treeShortTopRight,
@@ -158,6 +158,27 @@ class Main
 			heroAttackUp4
 		};
 
+		/*enum worldMapTiles
+		{
+			
+			darkGrass,
+			dirt,
+			woodDoor,
+			event,
+			transport,
+			previous,
+			wallfront,
+			wallvertical,
+			wallfrontendless,
+			wallhorizontal,
+			wallLeftCorner,
+			wallRightCorner,
+			wallBottomLeftCorner,
+			wallBottomRightCorner,
+			wallTop,
+			water,
+		};*/
+
 		enum msgtile
 		{
 			msgtopleft,
@@ -179,11 +200,17 @@ class Main
 		//the total of sprites
 		static const int total_sprites = 87;
 
+		//the total of world map sprites
+		static const int total_worldMapSprites = 16;
+
 		//the total of message sprites
 		static const int total_msgtiles = 1;
 		
 		//this is an array that will posses all sprites width and height
 		std::array<SDL_Rect, total_sprites> sprites;
+
+		//this is an array that will posses all world map tiles width and height
+		std::array<SDL_Rect, total_worldMapSprites> worldMapTiles;
 
 		//this will hold the sprites textures for messages
 		std::array<SDL_Rect, total_msgtiles> msgSprites;

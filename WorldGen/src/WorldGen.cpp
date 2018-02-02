@@ -8,6 +8,12 @@
 
 WorldGen::WorldGen()
 {
+	//Setting the perlin noise for the world map
+	noise.SetNoiseType(noise.Perlin);
+	noise.SetSeed(1334);
+	noise.SetInterp(noise.Linear);
+	noise.SetFrequency(0.1f);
+	noise.SetFractalOctaves(15);
 }
 
 WorldGen::~WorldGen()
@@ -72,7 +78,7 @@ WorldGen::~WorldGen()
 bool WorldGen::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet)
 {
 	
-	FastNoise * perlin = new FastNoise();
+	//FastNoise noise;
 
 	ImageManager load;
 	
@@ -92,8 +98,11 @@ bool WorldGen::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<
 	}*/
 
 	//Setting the perlin noise for the world map
-	perlin->SetNoiseType(perlin->Perlin);
-	perlin->SetSeed(1233);
+	/*noise.SetNoiseType(noise.Perlin);
+	noise.SetSeed(1334);
+	noise.SetInterp(noise.Linear);
+	noise.SetFrequency(0.1f);
+	noise.SetFractalOctaves(15);*/
 
 	float heightMap[32][32]; // 2D heightmap to create terrain
 
@@ -101,14 +110,21 @@ bool WorldGen::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<
 	{
 		for (indexY = 0; indexY < 32; indexY++)
 		{
-			heightMap[indexX][indexY] = perlin->GetNoise(indexX, indexY);
-			load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(darkGrass));
-		
+
+			heightMap[indexX][indexY] = noise.GetNoise(indexX, indexY);
+
+			load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(rand() % 34));
+
+			/*indexX += tileWidth_;
+
+			if (indexX >= levelWidth_)
+			{
+			indexX = 0;
+
+			indexY += tileHeight_;
+			}*/
 		}
 	}
-
-	load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(darkGrass));
-	//perlin(indexX, indexY);
 
 	return true;
 }

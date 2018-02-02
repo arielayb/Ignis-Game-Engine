@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "ItemManager.h"
 #include <Windows.h>
+#include "FastNoise.h"
 
 #if defined(__APPLE__)
 #include <OpenGL/gl3.h>
@@ -29,6 +30,7 @@ class DLLAPI WorldGen : public WorldInterface
 		int indexX = 0;
 		int indexY = 0;
 
+		FastNoise noise;
 
 	public:
 		WorldGen();

@@ -413,9 +413,10 @@ bool Main::mainLoop()
 				//  testbed for box2d
 				//world->testBed();
 
+				//main setting
 				world->loadTiles(_image, _renderer, sprites);
 				world->loadItems(_image, /*msgEvent*/_msgImage, _renderer, sprites);
-			
+
 				//  update the screen
 				SDL_RenderPresent(_renderer);
 			}

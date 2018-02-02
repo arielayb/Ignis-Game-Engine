@@ -30,6 +30,8 @@ WorldInterface::WorldInterface()
 	tileHeight_  = 20;
 	tileWidth_   = 20;
 
+	generate = true;
+
 	eventsEnabled = true;
 }
 
