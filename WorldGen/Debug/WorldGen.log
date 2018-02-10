@@ -1,20 +1,23 @@
-﻿Build started 2/1/2018 11:48:36 PM.
-     1>Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\WorldGen\WorldGen.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2/9/2018 8:49:50 PM.
+     1>Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\WorldGen\WorldGen.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\WorldGen\include" /I"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\IronAgeTales\include" /I"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\FastNoise" /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D MAKEDLL /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\WorldGen.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\IronAgeTales\include" /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D MAKEDLL /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\WorldGen.cpp
          WorldGen.cpp
      1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\include\worldgen.h(27): warning C4275: non dll-interface class 'WorldInterface' used as base for dll-interface class 'WorldGen'
-                 c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\include\worldinterface.h(16) : see declaration of 'WorldInterface'
+                 c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\ironagetales\include\worldinterface.h(16) : see declaration of 'WorldInterface'
                  c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\include\worldgen.h(26) : see declaration of 'WorldGen'
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\include\worldgen.h(33): warning C4251: 'WorldGen::noise' : class 'FastNoise' needs to have dll-interface to be used by clients of class 'WorldGen'
-                 c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\fastnoise\fastnoise.h(46) : see declaration of 'FastNoise'
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(114): warning C4244: 'argument' : conversion from 'int' to 'FN_DECIMAL', possible loss of data
-     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\src\worldgen.cpp(116): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-       Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.lib" /LIBPATH:"C:\Users\Ariel.Ariel1-PC\Documents\LudumDare\Debug\lib" /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" /NOLOGO Debug\WorldGen.obj
-         WorldGen.vcxproj -> C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.lib
-     1>Done Building Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\WorldGen\WorldGen.vcxproj" (Build target(s)).
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\worldgen\include\worldgen.h(30): warning C4251: 'WorldGen::_levelfile' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'WorldGen'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.dll" /INCREMENTAL /NOLOGO /LIBPATH:"C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib" /LIBPATH:"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\lib" /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" IronAgeTales.lib pthreadVC2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.lib" /MACHINE:X86 /DLL Debug\WorldGen.obj
+            Creating library C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.lib and object C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.exp
+     1>IronAgeTales.lib(ImageLoader.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'IronAgeTales.lib(ImageLoader.obj)' or at 'C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\vc120.pdb'; linking object as if no debug info
+     1>IronAgeTales.lib(ImageManager.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'IronAgeTales.lib(ImageManager.obj)' or at 'C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\vc120.pdb'; linking object as if no debug info
+     1>IronAgeTales.lib(Main.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'IronAgeTales.lib(Main.obj)' or at 'C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\vc120.pdb'; linking object as if no debug info
+     1>IronAgeTales.lib(Timer.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'IronAgeTales.lib(Timer.obj)' or at 'C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\vc120.pdb'; linking object as if no debug info
+     1>IronAgeTales.lib(WorldInterface.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'IronAgeTales.lib(WorldInterface.obj)' or at 'C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\vc120.pdb'; linking object as if no debug info
+         WorldGen.vcxproj -> C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\WorldGen.dll
+     1>Done Building Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\WorldGen\WorldGen.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.53
+Time Elapsed 00:00:01.76

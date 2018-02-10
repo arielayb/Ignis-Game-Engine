@@ -6,13 +6,13 @@
 #include <stdlib.h>
 #include "ItemManager.h"
 #include <Windows.h>
-#include "FastNoise.h"
+//#include "FastNoise.h"
 
-#if defined(__APPLE__)
-#include <OpenGL/gl3.h>
-#else
-//#include "glew/glew.h"
-#endif
+//#if defined(__APPLE__)
+//#include <OpenGL/gl3.h>
+//#else
+////#include "glew/glew.h"
+//#endif
 
 //#include "glfw/glfw3.h"
 #include <stdio.h>
@@ -26,11 +26,9 @@
 class DLLAPI WorldGen : public WorldInterface
 {
 	private:
-		//set the indexes of the map
-		int indexX = 0;
-		int indexY = 0;
 
-		FastNoise noise;
+		std::string _levelfile;
+		//FastNoise noise;
 
 	public:
 		WorldGen();

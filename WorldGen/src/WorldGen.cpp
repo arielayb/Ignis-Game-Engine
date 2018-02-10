@@ -1,7 +1,9 @@
 #include "WorldGen.h"
 #include <cmath>
+#include <iostream>
+#include <fstream>
 #include "ImageManager.h"
-#include "FastNoise.h"
+//#include "FastNoise.h"
 
 #define IYMAX 1599
 #define IXMAX 1599
@@ -9,11 +11,14 @@
 WorldGen::WorldGen()
 {
 	//Setting the perlin noise for the world map
-	noise.SetNoiseType(noise.Perlin);
+	/*noise.SetNoiseType(noise.Perlin);
 	noise.SetSeed(1334);
 	noise.SetInterp(noise.Linear);
-	noise.SetFrequency(0.1f);
-	noise.SetFractalOctaves(15);
+	noise.SetFrequency(-0.01);
+	noise.SetFractalOctaves(15);*/
+
+	//  set the level, items, and events
+	_levelfile = "level/worldGenTest.ignismap";
 }
 
 WorldGen::~WorldGen()
@@ -80,8 +85,6 @@ bool WorldGen::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<
 	
 	//FastNoise noise;
 
-	ImageManager load;
-	
 	// Precomputed (or otherwise) gradient vectors at each grid node
 	/*std::vector< std::vector<std::vector<float> >> gradient(IYMAX, std::vector<std::vector<float>>(IXMAX, std::vector<float>(2.0f, 1)));;
 
@@ -104,27 +107,66 @@ bool WorldGen::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<
 	noise.SetFrequency(0.1f);
 	noise.SetFractalOctaves(15);*/
 
-	float heightMap[32][32]; // 2D heightmap to create terrain
+	//int heightMap = 800; // 2D heightmap to create terrain
 
-	for (indexX = 0; indexX < 32; indexX++)
+	//for (indexX = 0; indexX < heightMap; indexX++)
+	//{
+	//	for (indexY = 0; indexY < heightMap; indexY++)
+	//	{
+
+	//		noise.GetNoise(indexX, indexY);
+	//		load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(rand() % 32));
+
+	//	}
+	//}
+
+	//load the map file
+	//std::ifstream map(level);
+	std::ifstream map(_levelfile);
+
+	ImageManager load;
+
+	if (map.fail())
 	{
-		for (indexY = 0; indexY < 32; indexY++)
+		printf("the map file is empty or missing!", SDL_GetError());
+		return false;
+	}
+
+	//this char will be used to draw the map.
+	char tile_type;
+
+	//set the indexes of the map
+	float indexX = 0.0f;
+	float indexY = 0.0f;
+
+	for (int i = 0; i <= total_tiles; i++)
+	{
+		//read the text file for the first layer
+		map >> tile_type;
+
+		switch (tile_type)
 		{
 
-			heightMap[indexX][indexY] = noise.GetNoise(indexX, indexY);
+			case '|':
+				load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(darkGrass));
+				break;
 
-			load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(rand() % 34));
+			case 'x':
+					load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(darkGrass));
+				break;
+		}
 
-			/*indexX += tileWidth_;
+		indexX += tileWidth_;
 
-			if (indexX >= levelWidth_)
-			{
+		if (indexX >= levelWidth_)
+		{
 			indexX = 0;
 
 			indexY += tileHeight_;
-			}*/
 		}
 	}
+
+	map.close();
 
 	return true;
 }

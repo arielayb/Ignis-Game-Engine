@@ -1,0 +1,3 @@
+LIBRARY WorldGen.dll
+EXPORTS
+       createWorld @1

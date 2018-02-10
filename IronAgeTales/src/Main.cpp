@@ -120,15 +120,23 @@ bool Main::mainLoop()
 	//Declare an HINSTANCE and load the library dynamically. Don’t forget 
 	//to specify a correct path to the location of LoadMe.dll
 
-	HINSTANCE LoadDLL		  = LoadLibrary("lib/LvlMgr.dll");
+	//HINSTANCE LoadDLL		  = LoadLibrary("lib/LvlMgr.dll");
 	
 	HINSTANCE LoadWorldGenDLL = LoadLibrary("lib/WorldGen.dll");
 
 	// Check to see if the library was loaded successfully 
-	if (!LoadDLL || !LoadWorldGenDLL)
+	/*if (!LoadDLL || !LoadWorldGenDLL)
 	{
 		printf("DLL library failed to load!\n");
 		FreeLibrary(LoadDLL);
+		FreeLibrary(LoadWorldGenDLL);
+		return 1;
+
+	}*/
+
+	if (!LoadWorldGenDLL)
+	{
+		printf("DLL library failed to load!\n");
 		FreeLibrary(LoadWorldGenDLL);
 		return 1;
 
@@ -146,13 +154,13 @@ bool Main::mainLoop()
 	//Levelfn CreateModule = Levelfn(GetProcAddress(LoadDLL, (LPCSTR)"createLevel"));
 	Worldfn CreateWorldModule = Worldfn(GetProcAddress(LoadWorldGenDLL, (LPCSTR)"createWorld"));
 
-	/*if (!CreateModule || !CreateWorldModule) {
-		std::cerr << "Unable to load module from DLL!\n";
-		std::cout << GetLastError() << std::endl;
-		FreeLibrary(LoadDLL);
-		FreeLibrary(LoadWorldGenDLL);
-		return 1;
-	}*/
+	//if (!CreateModule /*|| !CreateWorldModule*/) {
+	//	std::cerr << "Unable to load module from DLL!\n";
+	//	std::cout << GetLastError() << std::endl;
+	//	FreeLibrary(LoadDLL);
+	//	FreeLibrary(LoadWorldGenDLL);
+	//	return 1;
+	//}
 
 	if (!CreateWorldModule) {
 		std::cerr << "Unable to load module from DLL!\n";
@@ -453,7 +461,8 @@ bool Main::mainLoop()
 	delete world;
 	world = NULL;
 
-	FreeLibrary(LoadDLL);
+	//FreeLibrary(LoadDLL);
+	FreeLibrary(LoadWorldGenDLL);
 
 	return quit;
 }

@@ -7,11 +7,11 @@
 #include "ItemManager.h"
 #include <Windows.h>
 
-#if defined(__APPLE__)
-#include <OpenGL/gl3.h>
-#else
-//#include "glew/glew.h"
-#endif
+//#if defined(__APPLE__)
+//#include <OpenGL/gl3.h>
+//#else
+////#include "glew/glew.h"
+//#endif
 
 //#include "glfw/glfw3.h"
 #include <stdio.h>
