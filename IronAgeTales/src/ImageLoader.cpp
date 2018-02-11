@@ -813,10 +813,10 @@ bool ImageLoader::load_worldSprites(std::array<SDL_Rect, Main::total_worldMapSpr
 		//sprites.push_back(store_sprite(174, 140, 20, 20, sprites));
 
 		//water animation
-		worldSprites[World_water].x = 100;
-		worldSprites[World_water].y = 100;
-		worldSprites[World_water].w = 100;
-		worldSprites[World_water].h = 100;
+		worldSprites[World_water].x = 114;
+		worldSprites[World_water].y = 160;
+		worldSprites[World_water].w = 20;
+		worldSprites[World_water].h = 20;
 
 		//sprites.push_back(store_sprite(100, 100, 100, 100, sprites));
 

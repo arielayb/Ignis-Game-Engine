@@ -161,7 +161,7 @@ class Main
 			heroAttackUp4
 		};
 
-		enum worldMapTiles
+		enum worldMapSprites
 		{
 			
 			World_darkGrass,

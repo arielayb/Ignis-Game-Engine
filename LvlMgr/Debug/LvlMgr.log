@@ -1,11 +1,49 @@
-﻿Build started 2/11/2018 12:05:41 AM.
+﻿Build started 2/11/2018 12:45:01 AM.
      1>Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\LvlMgr\LvlMgr.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\IronAgeTales\include" /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D MAKEDLL /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\Levels.cpp
+         Levels.cpp
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\include\levels.h(26): warning C4275: non dll-interface class 'WorldInterface' used as base for dll-interface class 'Levels'
+                 c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\ironagetales\include\worldinterface.h(16) : see declaration of 'WorldInterface'
+                 c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\include\levels.h(25) : see declaration of 'Levels'
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\include\levels.h(46): warning C4251: 'Levels::_levelfile' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Levels'
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\include\levels.h(47): warning C4251: 'Levels::_eventfile' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Levels'
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\include\levels.h(49): warning C4251: 'Levels::_prevLevelfile' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Levels'
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\include\levels.h(50): warning C4251: 'Levels::_prevEventfile' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Levels'
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\include\levels.h(52): warning C4251: 'Levels::itemType' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Levels'
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(167): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(172): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(177): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(182): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(187): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(192): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(197): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(202): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(207): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(212): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(217): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(222): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(227): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(232): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(237): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(242): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(96): warning C4101: 'event_type' : unreferenced local variable
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(302): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(313): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(323): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(338): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(378): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(379): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(468): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(477): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(482): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(491): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\ariel.ariel1-pc\documents\visual studio 2013\projects\ironagetales\lvlmgr\src\levels.cpp(511): warning C4018: '<=' : signed/unsigned mismatch
+       Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\LvlMgr.dll" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\lib" /LIBPATH:"C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib" /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" IronAgeTales.lib pthreadVC2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\LvlMgr.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\LvlMgr.lib" /MACHINE:X86 /DLL Debug\Levels.obj
-            Creating library C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\LvlMgr.lib and object C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\LvlMgr.exp
          LvlMgr.vcxproj -> C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\Debug\LvlMgr.dll
      1>Done Building Project "C:\Users\Ariel.Ariel1-PC\documents\visual studio 2013\Projects\IronAgeTales\LvlMgr\LvlMgr.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.59
+Time Elapsed 00:00:02.04

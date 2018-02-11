@@ -5,9 +5,6 @@
 #include "ImageManager.h"
 //#include "FastNoise.h"
 
-#define IYMAX 1599
-#define IXMAX 1599
-
 WorldGen::WorldGen()
 {
 	//Setting the perlin noise for the world map
@@ -18,8 +15,8 @@ WorldGen::WorldGen()
 	noise.SetFractalOctaves(15);*/
 
 	//  set the level, items, and events
-	_levelfile = "level/worldGenTest.ignismap";
-	generated = false;
+	_levelfile    = "level/worldGenTest.ignismap";
+	generated     = false;
 }
 
 WorldGen::~WorldGen()
@@ -151,7 +148,12 @@ bool WorldGen::loadWorldTiles(SDL_Texture* image, SDL_Renderer* renderer, std::a
 		{
 			case 'x':
 				load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(rand() % 12));
-			break;
+				break;
+
+			case '~':
+				load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(World_water));
+				break;
+
 		}
 
 		indexX += tileWidth_;
