@@ -29,6 +29,7 @@ Main::Main()
 	screen_width  = 800;
 	pausedGame    = false;
 	pausePushed	  = true;
+	generateWorld = false;
 }
 
 Main::~Main()
@@ -89,6 +90,9 @@ bool Main::mainLoop()
 
 	//load the image library
 	ImageLoader* imagehandler = new ImageLoader(_image, _renderer);
+
+	//load and create clipping of world sprites.
+	imagehandler->load_worldSprites(worldMapTiles, _image, _renderer);
 
 	//load and create clipping of sprites.
 	imagehandler->load_sprites(sprites, _image, _renderer);
@@ -179,7 +183,7 @@ bool Main::mainLoop()
 	std::stringstream fpsFont;
 
 	//  set the level variable for polymorphic process
-	//WorldInterface * world = (*CreateModule)();
+	//WorldInterface * level = (*CreateModule)();
 	WorldInterface * world = (*CreateWorldModule)();
 
 	//  ceate player handler event
@@ -421,9 +425,20 @@ bool Main::mainLoop()
 				//  testbed for box2d
 				//world->testBed();
 
+				//if (!generateWorld)
+				//{
+				//	world->loadTiles(_image, _renderer, sprites);
+				//	world->loadItems(_image, /*msgEvent*/_msgImage, _renderer, sprites);
+				//}
+				//else if (generateWorld)
+				//{
+				//
+				//}
+
 				//main setting
-				world->loadTiles(_image, _renderer, sprites);
-				world->loadItems(_image, /*msgEvent*/_msgImage, _renderer, sprites);
+				//world->loadTiles(_image, _renderer, sprites);
+				world->loadWorldTiles(_image, _renderer, worldMapTiles);
+				//world->loadItems(_image, /*msgEvent*/_msgImage, _renderer, sprites);
 
 				//  update the screen
 				SDL_RenderPresent(_renderer);
@@ -468,11 +483,19 @@ bool Main::mainLoop()
 }
 
 //  the function that returns each tile data;
-std::array<SDL_Rect, Main::total_sprites> Main::store_sprite(std::array<SDL_Rect, Main::total_sprites>& spriteList)
+std::array<SDL_Rect, Main::total_sprites> Main::storeSprite(std::array<SDL_Rect, Main::total_sprites>& spriteList)
 {
 	sprites = spriteList;
 	
 	return sprites;
+}
+
+//  the function that returns each tile data for the world map;
+std::array<SDL_Rect, Main::total_worldMapSprites> Main::storeWorldSprite(std::array<SDL_Rect, Main::total_worldMapSprites>& spriteList)
+{
+	worldMapTiles = spriteList;
+
+	return worldMapTiles;
 }
 
 //  the function that returns each message tile data;

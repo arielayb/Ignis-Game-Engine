@@ -17,147 +17,149 @@
 #include <stdio.h>
 
 #ifdef MAKEDLL
-	#define DLLAPI __declspec(dllexport)
+#define DLLAPI __declspec(dllexport)
 #else
-	#define DLLAPI __declspec(dllimport)
+#define DLLAPI __declspec(dllimport)
 #endif
 
 class DLLAPI Levels : public WorldInterface
 {
-	private:
+private:
 
-		//location of the coin index from the array
-		int coinIndex;
+	//location of the coin index from the array
+	int coinIndex;
 
-		//  testing
-		int eventIndex;
-		int transitionIndex;
+	//  testing
+	int eventIndex;
+	int transitionIndex;
 
-		int itemIndex;
-		int totalCoins;
+	int itemIndex;
+	int totalCoins;
 
-		//set a temp position for the player
-		int tempXPos;
-		int tempYPos;
+	//set a temp position for the player
+	int tempXPos;
+	int tempYPos;
 
-		//temp variable
-		SDL_Rect coin;
+	//temp variable
+	SDL_Rect coin;
 
-		std::string _levelfile;
-		std::string _eventfile;
+	std::string _levelfile;
+	std::string _eventfile;
 
-		std::string _prevLevelfile;
-		std::string _prevEventfile;
+	std::string _prevLevelfile;
+	std::string _prevEventfile;
 
-		std::string itemType;
+	std::string itemType;
 
-		//event touched by plaer
-		bool eventActive;
+	//event touched by plaer
+	bool eventActive;
 
-		//visit next level
-		bool nextLevel;
-		bool nextEvents;
-		bool changedLevel;
-		bool prevChangedLevel;
+	//visit next level
+	bool nextLevel;
+	bool nextEvents;
+	bool changedLevel;
+	bool prevChangedLevel;
 
-		//previous level
-		bool previousLevel;
+	//previous level
+	bool previousLevel;
 
-		//collected object
-		bool collectedObject;
+	//collected object
+	bool collectedObject;
 
-		bool overrideIndex;
+	bool overrideIndex;
 
-		ItemManager* coinCollected;
+	ItemManager* coinCollected;
 
-		//collecting coins started?
-		bool collectionStarted;
+	//collecting coins started?
+	bool collectionStarted;
 
-		//  set the box2d stuff here
-		//b2Body  * _body;
-		//b2World * _world;
+	//  set the box2d stuff here
+	//b2Body  * _body;
+	//b2World * _world;
 
-		//b2FixtureDef _fixtureDef;
+	//b2FixtureDef _fixtureDef;
 
-		//b2BodyDef _bodyDef;
+	//b2BodyDef _bodyDef;
 
-		////  player's collision box
-		//b2PolygonShape _playerShape;
+	////  player's collision box
+	//b2PolygonShape _playerShape;
 
-		////  test box for collision
-		//b2PolygonShape _boxTest;
+	////  test box for collision
+	//b2PolygonShape _boxTest;
 
-		//  debug draw for box2s
-		//BoxDebugDraw draw;
-		//DebugDraw draw;
+	//  debug draw for box2s
+	//BoxDebugDraw draw;
+	//DebugDraw draw;
 
-	public:
+public:
 
-		Levels();
+	Levels();
 
-		~Levels();
+	~Levels();
 
-		//keep track of coins
-		int coinCount;
-	
-		//set camera 
-		SDL_Rect Camera;
+	//keep track of coins
+	int coinCount;
 
-		//ItemManager* coinCollected;
-	
-		//set of walls from the loaded map
-		std::array<SDL_Rect, total_tiles> setOfWalls;
+	//set camera 
+	SDL_Rect Camera;
 
-		//set of events from the loaded event
-		std::array<SDL_Rect, total_tiles> setOfEvents;
+	//ItemManager* coinCollected;
 
-		//set of coins
-		std::array<SDL_Rect, total_tiles> setOfCoins;
-	
-		//set of transition levels
-		std::array<SDL_Rect, total_tiles> setOfTransition;
+	//set of walls from the loaded map
+	std::array<SDL_Rect, total_tiles> setOfWalls;
 
-		//load all the sprites for the world.
-		//bool loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet, std::string level);
-		bool loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet);
+	//set of events from the loaded event
+	std::array<SDL_Rect, total_tiles> setOfEvents;
 
-		//load all the items
-		//bool loadItems(SDL_Texture* image, SDL_Texture* msgEvent, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet, std::array<SDL_Rect, total_msgtiles>& msgsprites, std::string eventLayer);
-		bool loadItems(SDL_Texture* image, SDL_Texture* msgEvent, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet);
+	//set of coins
+	std::array<SDL_Rect, total_tiles> setOfCoins;
 
-		//load the collision for this world
-		bool loadWalls(SDL_Rect collision, std::array<SDL_Rect, total_tiles> wall);
+	//set of transition levels
+	std::array<SDL_Rect, total_tiles> setOfTransition;
 
-		//load the collision for events
-		bool loadEvents(SDL_Rect collision, std::array<SDL_Rect, total_tiles> event);
+	//load all the world sprites for the level.
+	bool loadWorldTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_worldMapSprites>& worldTileSet);
 
-		//load the next level
-		bool loadTransition(SDL_Rect collision, std::array<SDL_Rect, total_tiles> transition);
+	//load all the sprites for the world.
+	bool loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet);
 
-		//load the collision for coins
-		bool loadCoins(SDL_Rect collision, std::array<SDL_Rect, total_tiles>& coins);
+	//load all the items
+	//bool loadItems(SDL_Texture* image, SDL_Texture* msgEvent, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet, std::array<SDL_Rect, total_msgtiles>& msgsprites, std::string eventLayer);
+	bool loadItems(SDL_Texture* image, SDL_Texture* msgEvent, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet);
 
-		//the collision management and set of wall detection for the player.
-		void collisionManagement(SDL_Rect playerBox, std::array<SDL_Rect, total_tiles> wallBox, std::array<SDL_Rect, total_tiles> eventBox, std::array<SDL_Rect, total_tiles>& coins);
-		//void collisionManagement(SDL_Rect playerBox);
+	//load the collision for this world
+	bool loadWalls(SDL_Rect collision, std::array<SDL_Rect, total_tiles> wall);
 
-		//the collision detection fucntion
-		bool checkingCollisions(SDL_Rect playerBox, SDL_Rect object);
+	//load the collision for events
+	bool loadEvents(SDL_Rect collision, std::array<SDL_Rect, total_tiles> event);
 
-		//set the coins to zero!
-		SDL_Rect storeTiles(int x, int y, int tileHeight, int tileWidth, SDL_Rect tile);
-		
-		//change the render image for the coin that was collected
-		bool collectedCoin(SDL_Rect coin, SDL_Texture *image);
+	//load the next level
+	bool loadTransition(SDL_Rect collision, std::array<SDL_Rect, total_tiles> transition);
 
-		//box2d testbed
-		//void testBed();
+	//load the collision for coins
+	bool loadCoins(SDL_Rect collision, std::array<SDL_Rect, total_tiles>& coins);
 
-		//set the level string
-		std::string setLevel(std::string level);
+	//the collision management and set of wall detection for the player.
+	void collisionManagement(SDL_Rect playerBox, std::array<SDL_Rect, total_tiles> wallBox, std::array<SDL_Rect, total_tiles> eventBox, std::array<SDL_Rect, total_tiles>& coins);
+	//void collisionManagement(SDL_Rect playerBox);
 
-		//set the event string
-		std::string setEvent(std::string events);
+	//the collision detection fucntion
+	bool checkingCollisions(SDL_Rect playerBox, SDL_Rect object);
+
+	//set the coins to zero!
+	SDL_Rect storeTiles(int x, int y, int tileHeight, int tileWidth, SDL_Rect tile);
+
+	//change the render image for the coin that was collected
+	bool collectedCoin(SDL_Rect coin, SDL_Texture *image);
+
+	//box2d testbed
+	//void testBed();
+
+	//set the level string
+	std::string setLevel(std::string level);
+
+	//set the event string
+	std::string setEvent(std::string events);
 
 };
 
@@ -169,4 +171,3 @@ extern "C" DLLAPI WorldInterface* __cdecl createLevel()
 }
 
 #endif
-

@@ -577,7 +577,7 @@ bool ImageLoader::load_sprites(std::array<SDL_Rect, Main::total_sprites> &sprite
 		sprites[treeShortBotRight].w = 20;
 		sprites[treeShortBotRight].h = 20;
 
-		Main::store_sprite(sprites);
+		Main::storeSprite(sprites);
 	}
 
 	return true;
@@ -627,12 +627,205 @@ bool ImageLoader::load_itemEvents(std::array<SDL_Rect, Main::total_sprites> &spr
 		sprites[coinAnim4].w = 7;
 		sprites[coinAnim4].h = 9;
 	
-		Main::store_sprite(sprites);
+		Main::storeSprite(sprites);
 
 	}
 
 	return true;
 }
+
+//load sprites for the world map
+bool ImageLoader::load_worldSprites(std::array<SDL_Rect, Main::total_worldMapSprites> &worldSprites, SDL_Texture *image, SDL_Renderer* renderer)
+{
+
+	ImageManager manage;
+
+	// load the image file
+	image = manage.loadTexture("images/IgnisSheet.png", image, renderer);
+	_image = image;
+	_render = renderer;
+
+	if (image == NULL)
+	{
+		printf("image failed to load %s\n", SDL_GetError());
+
+		return false;
+	}
+	else
+	{
+
+		//Set the grass tiles
+		worldSprites[World_darkGrass].x = 154;
+		worldSprites[World_darkGrass].y = 0;
+		worldSprites[World_darkGrass].w = 20;
+		worldSprites[World_darkGrass].h = 20;
+
+		////sprites.push_back(store_sprite(154, 0, 20, 20, sprites));
+
+		////grass with edges on dirt
+		//sprites[grassDirtHorizontal].x = 94;
+		//sprites[grassDirtHorizontal].y = 60;
+		//sprites[grassDirtHorizontal].w = 20;
+		//sprites[grassDirtHorizontal].h = 20;
+
+		////sprites.push_back(store_sprite(94, 60, 20, 20, sprites));
+
+		//sprites[grassDirtVertical].x = 114;
+		//sprites[grassDirtVertical].y = 60;
+		//sprites[grassDirtVertical].w = 20;
+		//sprites[grassDirtVertical].h = 20;
+
+		////sprites.push_back(store_sprite(114, 60, 20, 20, sprites));
+
+		//sprites[grassDirtTopLeft].x = 94;
+		//sprites[grassDirtTopLeft].y = 80;
+		//sprites[grassDirtTopLeft].w = 20;
+		//sprites[grassDirtTopLeft].h = 20;
+
+		////sprites.push_back(store_sprite(94, 80, 20, 20, sprites));
+
+		//sprites[grassDirtTopRight].x = 114;
+		//sprites[grassDirtTopRight].y = 80;
+		//sprites[grassDirtTopRight].w = 20;
+		//sprites[grassDirtTopRight].h = 20;
+
+		////sprites.push_back(store_sprite(114, 80, 20, 20, sprites));
+
+		//sprites[grassDirtBottomLeft].x = 114;
+		//sprites[grassDirtBottomLeft].y = 100;
+		//sprites[grassDirtBottomLeft].w = 20;
+		//sprites[grassDirtBottomLeft].h = 20;
+
+		////sprites.push_back(store_sprite(114, 100, 20, 20, sprites));
+
+		//sprites[grassDirtBottomRight].x = 94;
+		//sprites[grassDirtBottomRight].y = 100;
+		//sprites[grassDirtBottomRight].w = 20;
+		//sprites[grassDirtBottomRight].h = 20;
+
+		////sprites.push_back(store_sprite(94, 100, 20, 20, sprites));
+
+		//sprites[grassDirtHoriVerLeft].x = 114;
+		//sprites[grassDirtHoriVerLeft].y = 120;
+		//sprites[grassDirtHoriVerLeft].w = 20;
+		//sprites[grassDirtHoriVerLeft].h = 20;
+
+		////sprites.push_back(store_sprite(114, 120, 20, 20, sprites));
+
+		//sprites[grassDirtHoriVerRight].x = 94;
+		//sprites[grassDirtHoriVerRight].y = 120;
+		//sprites[grassDirtHoriVerRight].w = 20;
+		//sprites[grassDirtHoriVerRight].h = 20;
+
+		////sprites.push_back(store_sprite(94, 120, 20, 20, sprites));
+
+		//sprites[grassDirtVerHoriDown].x = 94;
+		//sprites[grassDirtVerHoriDown].y = 160;
+		//sprites[grassDirtVerHoriDown].w = 20;
+		//sprites[grassDirtVerHoriDown].h = 20;
+
+		////sprites.push_back(store_sprite(94, 160, 20, 20, sprites));
+
+		//sprites[grassDirtVerHoriUp].x = 94;
+		//sprites[grassDirtVerHoriUp].y = 140;
+		//sprites[grassDirtVerHoriUp].w = 20;
+		//sprites[grassDirtVerHoriUp].h = 20;
+
+		////sprites.push_back(store_sprite(94, 140, 20, 20, sprites));
+
+		//sprites[grassDirtFourPaths].x = 114;
+		//sprites[grassDirtFourPaths].y = 140;
+		//sprites[grassDirtFourPaths].w = 20;
+		//sprites[grassDirtFourPaths].h = 20;
+
+		//sprites.push_back(store_sprite(114, 140, 20, 20, sprites));
+
+		//dirt tilset
+		worldSprites[World_dirt].x = 134;
+		worldSprites[World_dirt].y = 40;
+		worldSprites[World_dirt].w = 20;
+		worldSprites[World_dirt].h = 20;
+
+		//sprites.push_back(store_sprite(380, 380, 20, 20, sprites));
+
+		//wall sets
+		worldSprites[World_wallfront].x = 74;
+		worldSprites[World_wallfront].y = 40;
+		worldSprites[World_wallfront].w = 20;
+		worldSprites[World_wallfront].h = 20;
+
+		//sprites.push_back(store_sprite(74, 40, 20, 20, sprites));
+
+		worldSprites[World_wallvertical].x = 74;
+		worldSprites[World_wallvertical].y = 20;
+		worldSprites[World_wallvertical].w = 20;
+		worldSprites[World_wallvertical].h = 20;
+
+		//sprites.push_back(store_sprite(74, 20, 20, 20, sprites));
+
+		worldSprites[World_wallfrontendless].x = 94;
+		worldSprites[World_wallfrontendless].y = 0;
+		worldSprites[World_wallfrontendless].w = 20;
+		worldSprites[World_wallfrontendless].h = 20;
+
+		//sprites.push_back(store_sprite(94, 0, 20, 20, sprites));
+
+		worldSprites[World_wallhorizontal].x = 114;
+		worldSprites[World_wallhorizontal].y = 0;
+		worldSprites[World_wallhorizontal].w = 20;
+		worldSprites[World_wallhorizontal].h = 20;
+
+		//sprites.push_back(store_sprite(114, 0, 20, 20, sprites));
+
+		worldSprites[World_wallLeftCorner].x = 154;
+		worldSprites[World_wallLeftCorner].y = 20;
+		worldSprites[World_wallLeftCorner].w = 20;
+		worldSprites[World_wallLeftCorner].h = 20;
+
+		//sprites.push_back(store_sprite(154, 20, 20, 20, sprites));
+
+		worldSprites[World_wallRightCorner].x = 154;
+		worldSprites[World_wallRightCorner].y = 40;
+		worldSprites[World_wallRightCorner].w = 20;
+		worldSprites[World_wallRightCorner].h = 20;
+
+		//sprites.push_back(store_sprite(154, 40, 20, 20, sprites));
+
+		worldSprites[World_wallBottomLeftCorner].x = 214;
+		worldSprites[World_wallBottomLeftCorner].y = 0;
+		worldSprites[World_wallBottomLeftCorner].w = 20;
+		worldSprites[World_wallBottomLeftCorner].h = 20;
+
+		//sprites.push_back(store_sprite(214, 0, 20, 20, sprites));
+
+		worldSprites[World_wallBottomRightCorner].x = 214;
+		worldSprites[World_wallBottomRightCorner].y = 20;
+		worldSprites[World_wallBottomRightCorner].w = 20;
+		worldSprites[World_wallBottomRightCorner].h = 20;
+
+		//sprites.push_back(store_sprite(214, 20, 20, 20, sprites));
+
+		worldSprites[World_wallTop].x = 234;
+		worldSprites[World_wallTop].y = 0;
+		worldSprites[World_wallTop].w = 20;
+		worldSprites[World_wallTop].h = 20;
+
+		//sprites.push_back(store_sprite(174, 140, 20, 20, sprites));
+
+		//water animation
+		worldSprites[World_water].x = 100;
+		worldSprites[World_water].y = 100;
+		worldSprites[World_water].w = 100;
+		worldSprites[World_water].h = 100;
+
+		//sprites.push_back(store_sprite(100, 100, 100, 100, sprites));
+
+		Main::storeWorldSprite(worldSprites);
+	}
+		
+	return true;
+}
+
 
 bool ImageLoader::load_msg(std::array<SDL_Rect, Main::total_msgtiles>& msgSprites, SDL_Texture *image, SDL_Renderer* renderer)
 {

@@ -43,6 +43,15 @@ Levels::~Levels()
 
 }
 
+
+//load all the world sprites for the level.
+bool Levels::loadWorldTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_worldMapSprites>& worldTileSet)
+{
+	//Do Nothing...
+	return true;
+}
+
+
 //bool Levels::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet, std::string level)
 bool Levels::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet)
 {

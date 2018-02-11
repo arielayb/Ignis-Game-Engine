@@ -31,6 +31,9 @@ class WorldInterface : public Main
 		//this loads the total of tiles
 		static const int total_tiles = 1599;
 
+		//this loads the total of tiles
+		//static const int total_levelSprites = 87;
+
 		//the player's velocity
 		float velX;
 		float velY;
@@ -107,19 +110,20 @@ class WorldInterface : public Main
 		//the input for the player.
 		void playerInput(SDL_Event events);
 
-		static const int total_sprites = 87;
-
 		/*
 		* pure virtual functions
 		*/
 		
 		//load every tile and setup the width and height.
 		//virtual SDL_Rect storeTiles(int x, int y, int tileHeight, int tileWidth, SDL_Rect tile) = 0;
-		
-		//load all the sprites for the world.
+
+		//load all the world sprites for the level.
+		virtual bool loadWorldTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_worldMapSprites>& tileSet) = 0;
+
+		//load all the sprites for the level.
 		virtual bool loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet) = 0;
 
-		//load all the items for the world
+		//load all the items for the level.
 		virtual bool loadItems(SDL_Texture* image, SDL_Texture* msgEvent, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet) = 0;
 
 		/**********************/

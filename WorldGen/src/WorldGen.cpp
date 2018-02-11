@@ -19,6 +19,7 @@ WorldGen::WorldGen()
 
 	//  set the level, items, and events
 	_levelfile = "level/worldGenTest.ignismap";
+	generated = false;
 }
 
 WorldGen::~WorldGen()
@@ -80,7 +81,7 @@ WorldGen::~WorldGen()
 //}
 
 //load all the sprites for the world.
-bool WorldGen::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet)
+bool WorldGen::loadWorldTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_worldMapSprites>& tileSet)
 {
 	
 	//FastNoise noise;
@@ -120,11 +121,13 @@ bool WorldGen::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<
 	//	}
 	//}
 
+	
+	
 	//load the map file
-	//std::ifstream map(level);
 	std::ifstream map(_levelfile);
 
 	ImageManager load;
+
 
 	if (map.fail())
 	{
@@ -146,14 +149,9 @@ bool WorldGen::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<
 
 		switch (tile_type)
 		{
-
-			case '|':
-				load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(darkGrass));
-				break;
-
 			case 'x':
-					load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(darkGrass));
-				break;
+				load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(rand() % 12));
+			break;
 		}
 
 		indexX += tileWidth_;
@@ -164,10 +162,19 @@ bool WorldGen::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<
 
 			indexY += tileHeight_;
 		}
+
 	}
 
 	map.close();
 
+	return true;
+}
+
+//load all the sprites for the world.
+bool WorldGen::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet)
+{
+
+	//Do Nothing...
 	return true;
 }
 

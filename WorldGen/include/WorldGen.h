@@ -28,7 +28,10 @@ class DLLAPI WorldGen : public WorldInterface
 	private:
 
 		std::string _levelfile;
+		std::string _genMap;
 		//FastNoise noise;
+
+		bool generated;
 
 	public:
 		WorldGen();
@@ -38,16 +41,8 @@ class DLLAPI WorldGen : public WorldInterface
 		int width;
 		int height;
 
-		//Classical Perlin noise -- on hold
-		// Function to linearly interpolate between a0 and a1
-		// Weight w should be in the range [0.0, 1.0]
-		//float lerp(float a0, float a1, float weight);
-
-		//// Computes the dot product of the distance and gradient vectors.
-		//float dotGridGradient(float ix, float iy, float x, float y);
-
-		//// Compute Perlin noise at coordinates x, y
-		//float perlin(float x, float y);
+		//load all the world sprites for the level.
+		bool loadWorldTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_worldMapSprites>& worldTileSet);
 
 		//load all the sprites for the world.
 		bool loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet);

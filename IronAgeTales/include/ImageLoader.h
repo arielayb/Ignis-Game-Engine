@@ -13,6 +13,7 @@ class ImageLoader : public ImageManager
 		~ImageLoader();
 
 		//load the sprites from the image file
+		bool load_worldSprites(std::array<SDL_Rect, Main::total_worldMapSprites> &worldSprites, SDL_Texture *image, SDL_Renderer* renderer);
 		bool load_sprites(std::array<SDL_Rect, Main::total_sprites> &sprites, SDL_Texture *image, SDL_Renderer* renderer);
 		bool load_itemEvents(std::array<SDL_Rect, Main::total_sprites> &sprites, SDL_Texture *image, SDL_Renderer* renderer);
 		bool load_msg(std::array<SDL_Rect, Main::total_msgtiles>& msgSprites, SDL_Texture *image, SDL_Renderer* renderer);

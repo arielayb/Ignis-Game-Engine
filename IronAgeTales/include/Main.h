@@ -42,6 +42,9 @@ class Main
 		//variable for rendering
 		SDL_Renderer* _renderer;
 	
+		//world was generated
+		bool generateWorld;
+
 	public:
 
 		//variables for the window
@@ -158,26 +161,22 @@ class Main
 			heroAttackUp4
 		};
 
-		/*enum worldMapTiles
+		enum worldMapTiles
 		{
 			
-			darkGrass,
-			dirt,
-			woodDoor,
-			event,
-			transport,
-			previous,
-			wallfront,
-			wallvertical,
-			wallfrontendless,
-			wallhorizontal,
-			wallLeftCorner,
-			wallRightCorner,
-			wallBottomLeftCorner,
-			wallBottomRightCorner,
-			wallTop,
-			water,
-		};*/
+			World_darkGrass,
+			World_dirt,
+			World_wallfront,
+			World_wallvertical,
+			World_wallfrontendless,
+			World_wallhorizontal,
+			World_wallLeftCorner,
+			World_wallRightCorner,
+			World_wallBottomLeftCorner,
+			World_wallBottomRightCorner,
+			World_wallTop,
+			World_water
+		};
 
 		enum msgtile
 		{
@@ -201,7 +200,7 @@ class Main
 		static const int total_sprites = 87;
 
 		//the total of world map sprites
-		static const int total_worldMapSprites = 16;
+		static const int total_worldMapSprites = 12;
 
 		//the total of message sprites
 		static const int total_msgtiles = 1;
@@ -242,7 +241,10 @@ class Main
 		//std::string setEvent(std::string events);
 
 		//store every sprite for the world and setup the width and height.
-		std::array<SDL_Rect, total_sprites> store_sprite(std::array<SDL_Rect, Main::total_sprites>& spriteList);
+		std::array<SDL_Rect, total_worldMapSprites> storeWorldSprite(std::array<SDL_Rect, total_worldMapSprites>& worldSpriteList);
+
+		//store every sprite for the world and setup the width and height.
+		std::array<SDL_Rect, total_sprites> storeSprite(std::array<SDL_Rect, total_sprites>& spriteList);
 
 		//store the message sprite tile
 		std::array<SDL_Rect, Main::total_msgtiles> Main::store_msgsprite(std::array<SDL_Rect, total_msgtiles>& spriteList);
