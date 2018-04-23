@@ -28,6 +28,10 @@ class WorldInterface : public Main
 		int levelWidth_;
 		int levelHeight_;
 	
+		//set camera width and height
+		int cameraScreenWidth;
+		int cameraScreenHeight;
+
 		//this loads the total of tiles
 		static const int total_tiles = 1599;
 
@@ -39,9 +43,7 @@ class WorldInterface : public Main
 		float velY;
 
 		////set camera 
-		//SDL_Rect camera = {
-		//	0, 0, screen_width, screen_height
-		//};
+		//SDL_Rect camera;
 
 		//Maximum axis velocity of the player
 		float player_vel = 2.0f;
@@ -130,10 +132,13 @@ class WorldInterface : public Main
 
 		//set the animation for the player
 		SDL_Rect playerAnimation(SDL_Rect player, std::array<SDL_Rect, total_sprites> tileSet);
-		SDL_Rect playerSwordAttackAnimation(SDL_Rect player, std::array<SDL_Rect, total_sprites> tileSet);
+		//SDL_Rect playerSwordAttackAnimation(SDL_Rect player, std::array<SDL_Rect, total_sprites> tileSet);
 
 		//set the animation for the player
 		SDL_Rect coinAnimation(SDL_Rect coin, std::array<SDL_Rect, total_sprites> tileSet);
+
+		//set the camera
+		//void setCamera();
 };
 
 #endif

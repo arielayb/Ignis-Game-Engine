@@ -31,6 +31,10 @@ class DLLAPI WorldGen : public WorldInterface
 		std::string _genMap;
 		//FastNoise noise;
 
+		//store the generated tiles in the container
+		//std::vector<SDL_Rect>worldMapTiles;
+		std::array<SDL_Rect, total_tiles>worldMapTiles;
+
 		bool generated;
 
 	public:
@@ -49,6 +53,9 @@ class DLLAPI WorldGen : public WorldInterface
 
 		//load all the items
 		bool loadItems(SDL_Texture* image, SDL_Texture* msgEvent, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet);
+
+		//store the tiles
+		SDL_Rect storeTiles(int x, int y, int tileHeight, int tileWidth, SDL_Rect tile);
 
 };
 

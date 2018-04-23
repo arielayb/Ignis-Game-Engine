@@ -266,13 +266,19 @@ bool Levels::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<SD
 	}
 
 	player = playerAnimation(player, tileSet);
-	player = playerSwordAttackAnimation(player, tileSet);
+	//player = playerSwordAttackAnimation(player, tileSet);
 
-	collisionManagement(player, setOfWalls, setOfEvents, setOfCoins);
-	//collisionManagement(player);
+	//collisionManagement(player, setOfWalls, setOfEvents, setOfCoins);
+	collisionManagement(player);
 	
+
+	/*load.renderTexture(0, 0, NULL, NULL, &camera);
+	load.renderTexture(xPos - camera.x, yPos - camera.y, NULL, NULL, NULL);*/
 	load.renderTexture(xPos, yPos, image, renderer, &player);
-	
+	/*load.renderTexture(0, 0, NULL, NULL, &camera);
+	load.renderTexture(xPos - camera.x, yPos - camera.y, NULL, NULL, NULL);*/
+
+
 	return true;
 }
 
@@ -442,7 +448,7 @@ SDL_Rect Levels::storeTiles(int x, int y, int tileHeight, int tileWidth, SDL_Rec
 }
 
 //  the collision management and set of wall detection for the player.
-void Levels::collisionManagement(SDL_Rect playerBox, std::array<SDL_Rect, total_tiles> wallBox, std::array<SDL_Rect, total_tiles> eventBox, std::array<SDL_Rect, total_tiles>& coins)
+void Levels::collisionManagement(SDL_Rect playerBox)
 {
 	//float32 timeStep = 1.0f / 60.0f;
 	

@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\LvlMgr\include;C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\include;C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\IronAgeTales\include;$(IncludePath)</IncludePath>
     <SourcePath>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\LvlMgr\src;$(SourcePath)</SourcePath>
-    <LibraryPath>C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib;C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\lib;C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib;C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -56,7 +56,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>IronAgeTales.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\lib;C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug;C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
     </Link>

@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include "ImageManager.h"
 //#include "FastNoise.h"
 
@@ -139,23 +140,63 @@ bool WorldGen::loadWorldTiles(SDL_Texture* image, SDL_Renderer* renderer, std::a
 	float indexX = 0.0f;
 	float indexY = 0.0f;
 
+	int seedData  = rand() % 4 + 1;
+	int randomNum = rand() % 3 + 1;
+
 	for (int i = 0; i <= total_tiles; i++)
 	{
-		//read the text file for the first layer
-		map >> tile_type;
-
-		switch (tile_type)
+				
+		if (!generated)
 		{
-			case 'x':
-				load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(rand() % 12));
-				break;
+			//read the text file for the first layer
+			map >> tile_type;
 
-			case '~':
-				load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(World_water));
-				break;
+			switch (tile_type)
+			{
+				case 'x':
+					if (seedData > randomNum)
+					{
+						//load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(World_dirt));
+						worldMapTiles[i] = storeTiles(indexX, indexY, tileHeight_, tileWidth_, tileSet.at(World_dirt));
+						break;
+					}
+					else if (seedData < randomNum){
+						//load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(World_water));
+						worldMapTiles[i] = storeTiles(indexX, indexY, tileHeight_, tileWidth_, tileSet.at(World_water));
+					}
+					break;
 
+				case 'z':
+					if (seedData > randomNum)
+					{
+						//load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(World_dirt));
+						worldMapTiles[i] = storeTiles(indexX, indexY, tileHeight_, tileWidth_, tileSet.at(World_dirt));
+						break;
+					}
+					else if (seedData < randomNum){
+						//load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(World_darkGrass));
+						worldMapTiles[i] = storeTiles(indexX, indexY, tileHeight_, tileWidth_, tileSet.at(World_darkGrass));
+					}
+					break;
+
+				case '~':
+					//load.renderTexture(indexX, indexY, image, renderer, &tileSet.at(World_water));
+					worldMapTiles[i] = storeTiles(indexX, indexY, tileHeight_, tileWidth_, tileSet.at(World_water));
+					break;
+
+			}
+
+			if (i == total_tiles)
+			{
+				generated = true;
+			}
+		
 		}
-
+		
+		if (generated){
+			load.renderTexture(indexX, indexY, image, renderer, &worldMapTiles[i]);
+		}
+				
 		indexX += tileWidth_;
 
 		if (indexX >= levelWidth_)
@@ -184,4 +225,15 @@ bool WorldGen::loadTiles(SDL_Texture* image, SDL_Renderer* renderer, std::array<
 bool WorldGen::loadItems(SDL_Texture* image, SDL_Texture* msgEvent, SDL_Renderer* renderer, std::array<SDL_Rect, total_sprites>& tileSet)
 {
 	return true;
+}
+
+SDL_Rect WorldGen::storeTiles(int x, int y, int tileHeight, int tileWidth, SDL_Rect tile)
+{
+	tile.x = x;
+	tile.y = y;
+
+	tile.h = tileHeight;
+	tile.w = tileWidth;
+
+	return tile;
 }

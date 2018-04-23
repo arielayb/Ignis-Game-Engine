@@ -15,6 +15,11 @@ WorldInterface::WorldInterface()
 	xPos = 280.0f;
 	yPos = 100.0f;
 
+	//set camera 
+	camera = {
+		0, 0, screen_width, screen_height
+	};
+
 	//check for hero default sprite
 	loaded_hero = false;
 
@@ -54,7 +59,6 @@ void WorldInterface::playerInput(SDL_Event events)
 				break;
 			case SDLK_DOWN:
 				playerDown = true;
-				playerFacingDown = true;
 				if (playerDown == true)
 				{
 					velY += player_vel;
@@ -219,30 +223,30 @@ SDL_Rect WorldInterface::playerAnimation(SDL_Rect player, std::array<SDL_Rect, t
 	return player;
 }
 
-SDL_Rect WorldInterface::playerSwordAttackAnimation(SDL_Rect player, std::array<SDL_Rect, total_sprites> tileSet)
-{
-	SDL_Rect playerSwordAttackDown[4] = {
-		tileSet.at(heroAttackDown1), tileSet.at(heroAttackDown2),
-		tileSet.at(heroAttackDown3), tileSet.at(herodown1)
-	};
-
-	if (playerFacingDown == true)
-	{
-		if (attackDown == true)
-		{
-			player = playerSwordAttackDown[playerFrame / 4];
-
-			playerFrame++;
-			if (playerFrame / 4 >= 4)
-			{
-				playerFrame = 0;
-				attackDown  = false;
-			}
-		}
-	}
-
-	return player;
-}
+//SDL_Rect WorldInterface::playerSwordAttackAnimation(SDL_Rect player, std::array<SDL_Rect, total_sprites> tileSet)
+//{
+//	SDL_Rect playerSwordAttackDown[4] = {
+//		tileSet.at(heroAttackDown1), tileSet.at(heroAttackDown2),
+//		tileSet.at(heroAttackDown3), tileSet.at(herodown1)
+//	};
+//
+//	if (playerFacingDown == true)
+//	{
+//		if (attackDown == true)
+//		{
+//			player = playerSwordAttackDown[playerFrame / 4];
+//
+//			playerFrame++;
+//			if (playerFrame / 4 >= 4)
+//			{
+//				playerFrame = 0;
+//				attackDown  = false;
+//			}
+//		}
+//	}
+//
+//	return player;
+//}
 
 //coin animation
 SDL_Rect WorldInterface::coinAnimation(SDL_Rect coin, std::array<SDL_Rect, total_sprites> tileSet)

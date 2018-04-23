@@ -81,7 +81,6 @@ bool Main::mainLoop()
 		printf("OpenGL context could not be created! SDL Error: %s\n", SDL_GetError());
 	}
 
-
 	//create the renderer
 	_renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE | SDL_RENDERER_PRESENTVSYNC);
 
@@ -124,54 +123,56 @@ bool Main::mainLoop()
 	//Declare an HINSTANCE and load the library dynamically. Don’t forget 
 	//to specify a correct path to the location of LoadMe.dll
 
+	//for release testing
 	//HINSTANCE LoadDLL		  = LoadLibrary("lib/LvlMgr.dll");
 	
+	HINSTANCE LoadDLL = LoadLibrary("LvlMgr.dll");
+
 	HINSTANCE LoadWorldGenDLL = LoadLibrary("lib/WorldGen.dll");
 
 	// Check to see if the library was loaded successfully 
-	/*if (!LoadDLL || !LoadWorldGenDLL)
+	if (!LoadDLL)
 	{
 		printf("DLL library failed to load!\n");
 		FreeLibrary(LoadDLL);
+		return 1;
+
+	}
+
+	/*if (!LoadWorldGenDLL)
+	{
+		printf("DLL library failed to load!\n");
 		FreeLibrary(LoadWorldGenDLL);
 		return 1;
 
 	}*/
 
-	if (!LoadWorldGenDLL)
-	{
-		printf("DLL library failed to load!\n");
-		FreeLibrary(LoadWorldGenDLL);
-		return 1;
-
-	}
-
 	/*
 	 *	add a loading DLL libray
 	 */
-	//typedef WorldInterface* (__cdecl *Levelfn)();
+	typedef WorldInterface* (__cdecl *Levelfn)();
 	typedef WorldInterface* (__cdecl *Worldfn)();
 
 
 	//declare a variable of type pointer to EntryPoint function, a name of 
 	// which you will later use instead of EntryPoint
-	//Levelfn CreateModule = Levelfn(GetProcAddress(LoadDLL, (LPCSTR)"createLevel"));
+	Levelfn CreateModule = Levelfn(GetProcAddress(LoadDLL, (LPCSTR)"createLevel"));
 	Worldfn CreateWorldModule = Worldfn(GetProcAddress(LoadWorldGenDLL, (LPCSTR)"createWorld"));
 
-	//if (!CreateModule /*|| !CreateWorldModule*/) {
-	//	std::cerr << "Unable to load module from DLL!\n";
-	//	std::cout << GetLastError() << std::endl;
-	//	FreeLibrary(LoadDLL);
-	//	FreeLibrary(LoadWorldGenDLL);
-	//	return 1;
-	//}
+	if (!CreateModule || !CreateWorldModule) {
+		std::cerr << "Unable to load module from DLL!\n";
+		std::cout << GetLastError() << std::endl;
+		FreeLibrary(LoadDLL);
+		FreeLibrary(LoadWorldGenDLL);
+		return 1;
+	}
 
-	if (!CreateWorldModule) {
+	/*if (!CreateWorldModule) {
 		std::cerr << "Unable to load module from DLL!\n";
 		std::cout << GetLastError() << std::endl;
 		FreeLibrary(LoadWorldGenDLL);
 		return 1;
-	}
+	}*/
 
 	//  to count the frame rate
 	Timer fps;
@@ -183,8 +184,8 @@ bool Main::mainLoop()
 	std::stringstream fpsFont;
 
 	//  set the level variable for polymorphic process
-	//WorldInterface * level = (*CreateModule)();
-	WorldInterface * world = (*CreateWorldModule)();
+	WorldInterface * world = (*CreateModule)();
+	//WorldInterface * world = (*CreateWorldModule)();
 
 	//  ceate player handler event
 	SDL_Event events;
@@ -435,10 +436,11 @@ bool Main::mainLoop()
 				//
 				//}
 
+				//world->setCamera();
 				//main setting
-				//world->loadTiles(_image, _renderer, sprites);
-				world->loadWorldTiles(_image, _renderer, worldMapTiles);
-				//world->loadItems(_image, /*msgEvent*/_msgImage, _renderer, sprites);
+				world->loadTiles(_image, _renderer, sprites);
+				//world->loadWorldTiles(_image, _renderer, worldMapTiles);
+				world->loadItems(_image, /*msgEvent*/_msgImage, _renderer, sprites);
 
 				//  update the screen
 				SDL_RenderPresent(_renderer);
@@ -476,8 +478,8 @@ bool Main::mainLoop()
 	delete world;
 	world = NULL;
 
-	//FreeLibrary(LoadDLL);
-	FreeLibrary(LoadWorldGenDLL);
+	FreeLibrary(LoadDLL);
+	//FreeLibrary(LoadWorldGenDLL);
 
 	return quit;
 }

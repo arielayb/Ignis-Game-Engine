@@ -88,7 +88,7 @@ SDL_Texture* ImageManager::loadFont(std::string text, TTF_Font* fontType, SDL_Co
 }
 
 //load the sprites on the screen
-bool ImageManager::renderTexture(float x, float y, SDL_Texture* image, SDL_Renderer* render, SDL_Rect* clip = NULL)
+bool ImageManager::renderTexture(float x, float y, SDL_Texture* image, SDL_Renderer* render, SDL_Rect* clip)
 {
 	SDL_Rect renderQuad;
 

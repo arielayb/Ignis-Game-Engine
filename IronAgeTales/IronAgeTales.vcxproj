@@ -41,7 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\include;C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\IronAgeTales\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib\x86;C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib\x86;C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug;$(LibraryPath)</LibraryPath>
     <SourcePath>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\IronAgeTales\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -62,9 +62,9 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;opengl32.lib;Box2D_debug.lib;glew32.lib;glew32s.lib;glfw.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;Box2D_debug.lib;opengl32.lib;glew32.lib;glew32s.lib;glfw.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug\lib;C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Ariel.Ariel1-PC\Documents\Visual Studio 2013\Projects\IronAgeTales\Debug;C:\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
     </Link>

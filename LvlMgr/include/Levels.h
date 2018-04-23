@@ -100,9 +100,6 @@ public:
 	//keep track of coins
 	int coinCount;
 
-	//set camera 
-	SDL_Rect Camera;
-
 	//ItemManager* coinCollected;
 
 	//set of walls from the loaded map
@@ -140,8 +137,8 @@ public:
 	bool loadCoins(SDL_Rect collision, std::array<SDL_Rect, total_tiles>& coins);
 
 	//the collision management and set of wall detection for the player.
-	void collisionManagement(SDL_Rect playerBox, std::array<SDL_Rect, total_tiles> wallBox, std::array<SDL_Rect, total_tiles> eventBox, std::array<SDL_Rect, total_tiles>& coins);
-	//void collisionManagement(SDL_Rect playerBox);
+	//void collisionManagement(SDL_Rect playerBox, std::array<SDL_Rect, total_tiles> wallBox, std::array<SDL_Rect, total_tiles> eventBox, std::array<SDL_Rect, total_tiles>& coins);
+	void collisionManagement(SDL_Rect playerBox);
 
 	//the collision detection fucntion
 	bool checkingCollisions(SDL_Rect playerBox, SDL_Rect object);

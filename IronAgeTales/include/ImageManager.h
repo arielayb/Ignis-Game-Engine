@@ -31,7 +31,7 @@ class ImageManager : public Main
 		SDL_Texture* loadFont(std::string time, TTF_Font* fontType, SDL_Color fontColor, SDL_Renderer* render);
 
 		//render image
-		bool renderTexture(float x, float y, SDL_Texture* image, SDL_Renderer* render, SDL_Rect* clip);
+		bool renderTexture(float x, float y, SDL_Texture* image = NULL, SDL_Renderer* render = NULL, SDL_Rect* clip = NULL);
 
 	private:
 		SDL_Texture* _image;

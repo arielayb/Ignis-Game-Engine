@@ -59,6 +59,9 @@ class Main
 		//these variables represent text for the fps and normal text displays.
 		SDL_Texture* text;
 		
+		//set camera 
+		SDL_Rect camera;
+
 		//variable for rendering
 		//SDL_Renderer* _renderer;
 
