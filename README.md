@@ -1,2 +1,2 @@
 # IronAgeTales
-The source code for the Ignis Game Engine for the Windows platform.
+The source code for the Ignis Game Engine on the Windows platform.
