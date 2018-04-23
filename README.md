@@ -1,2 +1,2 @@
 # IronAgeTales
-The first game project for the Dark Star Ship Studio Company.
+The source code for the Ignis Game Engine for the Windows platform.
